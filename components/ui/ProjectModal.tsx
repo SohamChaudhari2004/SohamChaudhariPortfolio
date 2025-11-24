@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -14,6 +14,18 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
   const [activeCategory, setActiveCategory] = useState("All");
+
+  // Handle Escape key press
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
 
   const filteredProjects = activeCategory === "All"
     ? projects
@@ -38,6 +50,7 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
+            onClick={(e) => e.stopPropagation()}
             className="relative w-full h-[90vh] max-w-7xl bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden flex flex-col shadow-2xl"
           >
             {/* Header */}
