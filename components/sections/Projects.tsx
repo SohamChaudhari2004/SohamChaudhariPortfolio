@@ -5,12 +5,15 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
-import { projects } from "@/data/projects";
+import { ArrowUpRight, ArrowRight, MoveUpRight } from "lucide-react";
+import { projects, Project } from "@/data/projects";
 import ProjectModal from "@/components/ui/ProjectModal";
+import ProjectDetailModal from "@/components/ui/ProjectDetailModal";
 
 export default function FeaturedWork() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -18,6 +21,11 @@ export default function FeaturedWork() {
 
   // Display only the first 6 projects in the featured section
   const featuredProjects = projects.slice(0, 6);
+
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsDetailModalOpen(true);
+  };
 
   return (
     <section id="projects" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 max-w-[1280px] mx-auto relative">
@@ -38,6 +46,7 @@ export default function FeaturedWork() {
         {featuredProjects.map((project, index) => (
           <motion.div
             key={index}
+            onClick={() => handleProjectClick(project)}
             initial={{ opacity: 0, y: 60, scale: 0.95 }}
             animate={inView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.95 }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -61,6 +70,15 @@ export default function FeaturedWork() {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
 
+                {/* Detail Arrow Button - Top Right */}
+                <button
+                  onClick={() => handleProjectClick(project)}
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 sm:p-2.5 rounded-full bg-white/50 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-110 z-10"
+                  aria-label="View project details"
+                >
+                  <MoveUpRight className="w-4 h-4 sm:w-5 text-black sm:h-5" />
+                </button>
+
                 {/* Project Info */}
                 <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6">
                   <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{project.title}</h3>
@@ -73,6 +91,7 @@ export default function FeaturedWork() {
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
                         className="flex-1 bg-black/50 backdrop-blur-md border border-white/20 rounded-lg sm:rounded-xl py-2 sm:py-2.5 px-3 sm:px-4 flex items-center justify-center gap-1.5 sm:gap-2 text-white transition-all duration-300 hover:bg-white/20 hover:scale-[1.02]"
                       >
                         <span className="text-xs sm:text-sm font-medium">Live</span>
@@ -84,6 +103,7 @@ export default function FeaturedWork() {
                         href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
                         className="flex-1 bg-black/50 backdrop-blur-md border border-white/20 rounded-lg sm:rounded-xl py-2 sm:py-2.5 px-3 sm:px-4 flex items-center justify-center gap-1.5 sm:gap-2 text-white transition-all duration-300 hover:bg-white/20 hover:scale-[1.02]"
                       >
                         <span className="text-xs sm:text-sm font-medium">GitHub</span>
@@ -114,6 +134,11 @@ export default function FeaturedWork() {
       </div>
 
       <ProjectModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ProjectDetailModal 
+        isOpen={isDetailModalOpen} 
+        onClose={() => setIsDetailModalOpen(false)} 
+        project={selectedProject}
+      />
     </section>
   );
 }

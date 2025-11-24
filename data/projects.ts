@@ -28,12 +28,21 @@ export const projects: Project[] = [
     category: "ai-ml",
   },
   {
+    title: "MOSAIC",
+    description: "MOSAIC (Multimodal Orchestration for Synthesis, Analysis & Intelligent Comprehension) - AI-powered video analysis platform featuring FastAPI backend, React frontend, and MCP server. Process videos, extract clips, ask questions about content, and perform multimodal search using vision models and transcription, Even creates clips from a video!",
+    githubLink: "https://github.com/SohamChaudhari2004/MOSAIC",
+    liveLink: "",
+    image: "",
+    aspect: "aspect-[3/4]",
+    category: "ai-ml",
+  },
+  {
     title: "Cold email generator",
     description: "A generative AI project utilizing Langchain and Llama 3.1 to develop advanced language models that generate context-aware responses and automate various tasks efficiently.",
     githubLink: "https://github.com/SohamChaudhari2004/Cold_Email_Generator",
     liveLink: "https://cold-email-generator-vj9l.onrender.com/",
     image: "/assets/ColdEmailGenerator.png",
-    aspect: "aspect-[3/4]",
+    aspect: "aspect-square",
     category: "ai-ml",
   },
   {
