@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, Github, Calendar, Tag } from "lucide-react";
 import Image from "next/image";
@@ -13,6 +14,18 @@ interface ProjectDetailModalProps {
 }
 
 export default function ProjectDetailModal({ isOpen, onClose, project }: ProjectDetailModalProps) {
+  // Handle Escape key press
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
+
   if (!project) return null;
 
   return (
@@ -35,6 +48,7 @@ export default function ProjectDetailModal({ isOpen, onClose, project }: Project
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
+              onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-4xl max-h-[90vh] bg-gray-900/95 backdrop-blur-md border border-white/20 rounded-2xl md:rounded-3xl overflow-hidden"
             >
               {/* Close Button */}
