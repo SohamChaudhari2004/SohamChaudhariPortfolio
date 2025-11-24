@@ -58,23 +58,43 @@ export default function About() {
       <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
         {/* Left Content */}
         <div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-medium mb-8 tracking-tight"
-          >
-            Meet Soham
-          </motion.h2>
+          {/* Heading and Description with image on right for medium screens */}
+          <div className="flex gap-6 mb-12">
+            <div className="flex-1">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6 }}
+                className="text-5xl md:text-6xl font-medium mb-8 tracking-tight"
+              >
+                Meet Soham
+              </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl"
-          >
-            I'm Soham, an AI & Machine Learning Engineer passionate about building intelligent, high-impact systems. I specialize in developing high-accuracy ML models, scalable AI applications, and multimodal solutions that combine computer vision, NLP, and generative AI.
-          </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-gray-400 text-lg leading-relaxed"
+              >
+                I'm Soham, an AI & Machine Learning Engineer passionate about building intelligent, high-impact systems. I specialize in developing high-accuracy ML models, scalable AI applications, and multimodal solutions that combine computer vision, NLP, and generative AI.
+              </motion.p>
+            </div>
+            
+            {/* Vertical rectangle image for medium screens only */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.50 }}
+              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="hidden md:block lg:hidden relative w-48 h-64 rounded-sm overflow-hidden bg-white/5 shrink-0"
+            >
+              <Image
+                src="/image1.jpeg"
+                alt="Portrait of Soham"
+                fill
+                className="object-cover transition-all duration-700"
+              />
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -110,18 +130,18 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Right Image */}
+        {/* Right Image - Large screens only */}
         <motion.div
           initial={{ opacity: 0, scale: 0.50 }}
           animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="relative aspect-square md:aspect-4/5 w-full rounded-sm overflow-hidden bg-white/5"
+          className="hidden lg:block relative aspect-square md:aspect-4/5 w-full rounded-sm overflow-hidden bg-white/5"
         >
           <Image
             src="/image1.jpeg"
             alt="Portrait of Soham"
             fill
-            className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            className="object-cover lg:grayscale hover:grayscale-0 transition-all duration-700"
           />
         </motion.div>
       </div>
