@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
 import Image from "next/image";
+import ContactModal from "./ContactModal";
+
 export default function Footer() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -16,6 +19,12 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             Developing applications that matter.
           </p>
+        </div>
+
+        <div className="mr-40 p-4 bg-white/30 rounded-lg">
+        <button onClick={() => setIsContactOpen(true)}>
+          Contact Me
+        </button>
         </div>
 
         <div className="flex items-center gap-6">
@@ -57,7 +66,10 @@ export default function Footer() {
         </div>
       </div>
       
-      
+      <ContactModal 
+        isOpen={isContactOpen} 
+        onClose={() => setIsContactOpen(false)} 
+      />
     </footer>
   );
 }

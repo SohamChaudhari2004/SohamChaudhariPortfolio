@@ -75,7 +75,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease }}
-            className="flex mt-8 flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex mt-8 flex-row sm:flex-row items-center justify-center gap-4"
           >   
               <Image
                 src="/github.svg"
@@ -113,7 +113,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-0 right-0 z-10 flex items-center justify-center gap-4 text-white text-sm"
+        className="fixed bg-black/80 p-3 w-full bottom-2 left-0  right-0 z-10 flex items-center justify-center gap-4 text-white/55 text-sm"
       >
         {/* <span>Scroll down</span> */}
         <div className="w-16 h-px bg-white" />

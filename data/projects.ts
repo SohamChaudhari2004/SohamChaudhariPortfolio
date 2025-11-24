@@ -19,6 +19,15 @@ export const projects: Project[] = [
     category: "ai-ml",
   },
   {
+    title: "VISION AI",
+    description: "An AI-powered solution for efficient video and image analysis, leveraging advanced machine learning models to enhance visual data processing and superscaling solutions.",
+    githubLink: "https://github.com/SohamChaudhari2004/hack_frontend",
+    liveLink: "https://hack-frontend-eta.vercel.app/",
+    image: "/assets/VisionAi.png",
+    aspect: "aspect-[3/4]",
+    category: "ai-ml",
+  },
+  {
     title: "Cold email generator",
     description: "A generative AI project utilizing Langchain and Llama 3.1 to develop advanced language models that generate context-aware responses and automate various tasks efficiently.",
     githubLink: "https://github.com/SohamChaudhari2004/Cold_Email_Generator",
@@ -26,15 +35,6 @@ export const projects: Project[] = [
     image: "/assets/ColdEmailGenerator.png",
     aspect: "aspect-[3/4]",
     category: "ai-ml",
-  },
-  {
-    title: "Sociolair",
-    description: "A web application built with the MERN stack, designed as a social media platform tailored for sociopaths, offering unique features and interactions suited to this specific user base.",
-    githubLink: "https://github.com/SohamChaudhari2004/SocioLair",
-    liveLink: "",
-    image: "/assets/Sociopedia.png",
-    aspect: "aspect-square",
-    category: "web-dev",
   },
   {
     title: "FilmWare",
@@ -45,6 +45,25 @@ export const projects: Project[] = [
     aspect: "aspect-[3/4]",
     category: "web-dev",
   },
+  {
+    title: "Sociolair",
+    description: "A web application built with the MERN stack, designed as a social media platform tailored for sociopaths, offering unique features and interactions suited to this specific user base.",
+    githubLink: "https://github.com/SohamChaudhari2004/SocioLair",
+    liveLink: "",
+    image: "/assets/Sociopedia.png",
+    aspect: "aspect-square",
+    category: "web-dev",
+  },
+   {
+    title: "Food Saver",
+    description: "A dynamic web application designed to efficiently distribute surplus food, connecting donors and recipients to reduce food waste and support communities in need.",
+    githubLink: "https://github.com/SohamChaudhari2004/MiniProjSE_2k24",
+    liveLink: "https://adorable-starlight-3a663d.netlify.app/",
+    image: "/assets/FoodSaver.png",
+    aspect: "aspect-[4/3]",
+    category: "web-dev",
+  },
+  
   {
     title: "ChatBase",
     description: "A real-time chat application built with React and Firebase, allowing users to engage in instant messaging with seamless communication and data synchronization.",
@@ -63,15 +82,7 @@ export const projects: Project[] = [
     aspect: "aspect-[3/4]",
     category: "web-dev",
   },
-  {
-    title: "Food Saver",
-    description: "A dynamic web application designed to efficiently distribute surplus food, connecting donors and recipients to reduce food waste and support communities in need.",
-    githubLink: "https://github.com/SohamChaudhari2004/MiniProjSE_2k24",
-    liveLink: "https://adorable-starlight-3a663d.netlify.app/",
-    image: "/assets/FoodSaver.png",
-    aspect: "aspect-[4/3]",
-    category: "web-dev",
-  },
+ 
   {
     title: "Chat With PDF",
     description: "An AI-powered tool that allows users to interact with PDF files through chat-based queries, enabling easy and efficient information retrieval.",
@@ -81,15 +92,7 @@ export const projects: Project[] = [
     aspect: "aspect-square",
     category: "ai-ml",
   },
-  {
-    title: "VISION AI",
-    description: "An AI-powered solution for efficient video and image analysis, leveraging advanced machine learning models to enhance visual data processing and superscaling solutions.",
-    githubLink: "https://github.com/SohamChaudhari2004/hack_frontend",
-    liveLink: "https://hack-frontend-eta.vercel.app/",
-    image: "/assets/VisionAi.png",
-    aspect: "aspect-[3/4]",
-    category: "ai-ml",
-  },
+  
   {
     title: "Language-Detector",
     description: "A language detection application built using Python, FastAPI, and Streamlit, containerized with Docker, to detect and display the language of input text in real-time.",
