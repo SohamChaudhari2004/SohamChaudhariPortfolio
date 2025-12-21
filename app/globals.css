@@ -2,8 +2,6 @@
 @import "tailwindcss";
  body {
     cursor: url('/cursor.svg') 0 0, auto;
-    
-
 }
 
 Interactive elements
