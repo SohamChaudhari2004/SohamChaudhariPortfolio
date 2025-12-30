@@ -70,12 +70,12 @@ export default function Navbar() {
             </Link>
           ))}
             
-          <button
+          {/* <button
             onClick={handleContactClick}
             className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200"
           >
             Contact
-          </button>
+          </button> */}
           
           <Link href={'/services'}>
             <button className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200">
