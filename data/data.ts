@@ -3,5 +3,5 @@ export interface Resume {
 }
 
 export const resume: Resume = {
-  path: "/resume.pdf",
+  path: "/SohamChaudhariResumeJan2026.pdf",
 };

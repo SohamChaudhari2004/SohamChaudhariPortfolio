@@ -27,7 +27,7 @@ const experience = [
   },
   {
     role: "AI Developer Intern",
-    company: "MikeRoss.Ai",
+    company: "UnLawc",
     period: "Sept 2025 - present",
   },
 ];
