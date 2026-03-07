@@ -28,10 +28,12 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="#"
-          onClick={() => window.open("https://www.linkedin.com/in/sohamchaudhari2004/", "_blank")}
-          className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200">
-            
+          <a
+            href="https://www.linkedin.com/in/sohamchaudhari2004/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200"
+          >
             <Image
               src="/Linkedin.png"
               alt="LinkedIn"
@@ -39,11 +41,13 @@ export default function Footer() {
               height={32}
               className="w-8 h-8"
             />
-          
           </a>
-          <a href="#"
-          onClick={() => window.open("https://github.com/sohamchaudhari2004", "_blank")}
-          className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200">
+          <a
+            href="https://github.com/sohamchaudhari2004"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200"
+          >
             <Image
               src="/github.svg"
               alt="GitHub"
@@ -52,9 +56,12 @@ export default function Footer() {
               className="w-8 h-8"
             />
           </a>
-          <a href="#"
-          onClick={() => window.open("https://pypi.org/user/SohamChaudhari2004/", "_blank")}
-          className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200">
+          <a
+            href="https://pypi.org/user/SohamChaudhari2004/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200"
+          >
             <Image
               src="/pypi.svg"
               alt="PyPI"
