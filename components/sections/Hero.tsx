@@ -21,7 +21,7 @@ export default function Hero() {
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl">
             <img 
-              src="\image1_croped_enhance.jpg" 
+              src="/linkedinprofile.jpg" 
               alt="Profile" 
               className="w-full h-full object-cover"
             />
