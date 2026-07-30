@@ -45,7 +45,6 @@ export default function SkillCard({ title, icon: Icon, skills, index }: SkillCar
                 alt={skill.name}
                 fill
                 className="object-contain filter brightness-0 invert"
-                unoptimized // Simple Icons CDN might not work well with Next.js optimization without config
               />
             </div>
             <span className="text-xs font-medium text-gray-400 group-hover:text-white text-center leading-tight">
